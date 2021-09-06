@@ -1,5 +1,5 @@
 /*
-  Mouse.h
+  HMouse.h
 
   Copyright (c) 2015, Arduino LLC
   Original code (pre-library): Copyright (c) 2011, Peter Barrett
@@ -19,8 +19,8 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef MOUSE_h
-#define MOUSE_h
+#ifndef HMOUSE_h
+#define HMOUSE_h
 
 #include "HID.h"
 
@@ -39,22 +39,22 @@
 #define MOUSE_MIDDLE 4
 #define MOUSE_ALL (MOUSE_LEFT | MOUSE_RIGHT | MOUSE_MIDDLE)
 
-class Mouse_
+class HMouse_
 {
 private:
   uint8_t _buttons;
   void buttons(uint8_t b);
 public:
-  Mouse_(void);
+  HMouse_(void);
   void begin(void);
   void end(void);
   void click(uint8_t b = MOUSE_LEFT);
-  void move(int x, int y, signed char wheel = 0);
+  void move(int x, int y, signed char h = 0, signed char v = 0);
   void press(uint8_t b = MOUSE_LEFT);   // press LEFT by default
   void release(uint8_t b = MOUSE_LEFT); // release LEFT by default
   bool isPressed(uint8_t b = MOUSE_LEFT); // check LEFT by default
 };
-extern Mouse_ Mouse;
+extern HMouse_ HMouse;
 
 #endif
 #endif
