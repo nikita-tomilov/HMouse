@@ -108,7 +108,7 @@ void HMouse_::move(int x, int y, int h = 0, int v = 0)
 	m[1] = limit_xy(x);
 	m[2] = limit_xy(y);
 	m[3] = limit_xy(h);
-  m[4] = limit_xy(v);
+	m[4] = limit_xy(v);
 	HID().SendReport(1,m,5);
 }
 
