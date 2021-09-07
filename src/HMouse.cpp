@@ -101,14 +101,14 @@ void HMouse_::click(uint8_t b)
 	move(0,0,0);
 }
 
-void HMouse_::move(int x, int y, signed char h = 0, signed char v = 0)
+void HMouse_::move(int x, int y, int h = 0, int v = 0)
 {
-	uint8_t m[4];
+	uint8_t m[5];
 	m[0] = _buttons;
 	m[1] = limit_xy(x);
 	m[2] = limit_xy(y);
-	m[3] = h;
-  m[4] = v;
+	m[3] = limit_xy(h);
+  m[4] = limit_xy(v);
 	HID().SendReport(1,m,5);
 }
 

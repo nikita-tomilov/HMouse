@@ -49,7 +49,7 @@ public:
   void begin(void);
   void end(void);
   void click(uint8_t b = MOUSE_LEFT);
-  void move(int x, int y, signed char h = 0, signed char v = 0);
+  void move(int x, int y, int h = 0, int v = 0);
   void press(uint8_t b = MOUSE_LEFT);   // press LEFT by default
   void release(uint8_t b = MOUSE_LEFT); // release LEFT by default
   bool isPressed(uint8_t b = MOUSE_LEFT); // check LEFT by default
